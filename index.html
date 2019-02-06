@@ -18,7 +18,7 @@
 <body>
     <script>
         var YOUR_CLIENT_ID = 'a6b221902569443483e1c70f7330a0ae';
-        var YOUR_REDIRECT_URI = 'file:///Users/sfuller/Desktop/guildinspector.html';
+        var YOUR_REDIRECT_URI = 'https://steven-fuller.github.io';
         var fragmentString = location.hash.substring(1);
       
         // Parse query string to see if page request is coming from OAuth 2.0 server.
@@ -58,11 +58,11 @@
         }
       
         /*
-         * Create form to request access token from Google's OAuth 2.0 server.
+         * Create form to request access token from Blizzard's OAuth 2.0 server.
          */
         function oauth2SignIn() {
-          // Google's OAuth 2.0 endpoint for requesting an access token
-          var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+          // Blizzard's OAuth 2.0 endpoint for requesting an access token
+          var oauth2Endpoint = 'https://us.battle.net/oauth/token';
       
           // Create element to open OAuth 2.0 endpoint in new window.
           var form = document.createElement('form');
@@ -71,8 +71,8 @@
       
           // Parameters to pass to OAuth 2.0 endpoint.
           var params = {'client_id': 'a6b221902569443483e1c70f7330a0ae',
-                        'redirect_uri': 'file:///Users/sfuller/Desktop/guildinspector.html',
-                        'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+                        'redirect_uri': 'https://steven-fuller.github.io',
+                        'scope': 'public',
                         'state': 'try_sample_request',
                         'include_granted_scopes': 'true',
                         'response_type': 'token'};

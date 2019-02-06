@@ -18,7 +18,7 @@
 <body>
     <script>
         var YOUR_CLIENT_ID = 'a6b221902569443483e1c70f7330a0ae';
-        var YOUR_REDIRECT_URI = 'https://steven-fuller.github.io';
+        var YOUR_CLIENT_SECRET = 'zOLsk5ppFrGuQbwe5OMFvOlx76OT21Pp';
         var fragmentString = location.hash.substring(1);
       
         // Parse query string to see if page request is coming from OAuth 2.0 server.
@@ -70,12 +70,9 @@
           form.setAttribute('action', oauth2Endpoint);
       
           // Parameters to pass to OAuth 2.0 endpoint.
-          var params = {'client_id': 'a6b221902569443483e1c70f7330a0ae',
-                        'redirect_uri': 'https://steven-fuller.github.io',
-                        'scope': 'public',
-                        'state': 'try_sample_request',
-                        'include_granted_scopes': 'true',
-                        'response_type': 'token'};
+          var params = {'client_id': YOUR_CLIENT_ID,
+                        'client_secret': YOUR_CLIENT_SECRET,
+                        'grant_type': 'client_credentials'};
       
           // Add form parameters as hidden input values.
           for (var p in params) {
